@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export default function Hero() {
   return (
-    <section id='home' className='bg-gray-50 pt-16 pb-10'>
+    <section id='home' className=' pt-16 pb-10'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center  justify-between'>
         <div className='md:w-1/2 mb-8 md:mb-0'>
           <h1 className='text-4xl font-bold text-gray-900 mb-4'>

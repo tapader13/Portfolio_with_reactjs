@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-scroll';
+import { useLocation } from 'react-router';
 
 const navItems = [
+  { name: 'Home', href: '' },
   { name: 'About', href: 'about' },
   { name: 'Skills', href: 'skills' },
   { name: 'Education', href: 'education' },
@@ -13,9 +15,10 @@ const navItems = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const pathname = useLocation().pathname;
+  console.log(pathname);
   return (
-    <nav className='bg-white h-16 shadow-md fixed w-full z-10'>
+    <nav className=' h-16 shadow-md fixed w-full z-10'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='flex items-center'>
@@ -25,13 +28,13 @@ export default function Header() {
               smooth={true}
               duration={500}
             >
-              <h1 className='font-semibold text-3xl text-black '>
+              <h1 className='font-semibold text-3xl  '>
                 Minhaj<span className='text-accent'>.</span>
               </h1>
             </Link>
           </div>
           <div className='hidden md:block'>
-            <div className='ml-10 flex items-baseline space-x-4'>
+            <div className='ml-10 flex items-baseline space-x-8'>
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -40,7 +43,10 @@ export default function Header() {
                   duration={500}
                   spy={true}
                   offset={-70}
-                  className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
+                  className={`${
+                    pathname === `/${item.href}` &&
+                    'text-accent border-b-2 border-accent'
+                  } transition-all hover:text-accent font-medium text-white`}
                 >
                   {item.name}
                 </Link>
