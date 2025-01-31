@@ -41,10 +41,13 @@ export default function Hero() {
                 amazing together!
               </p>
               <div className='flex md:flex-row flex-col gap-8 items-center'>
-                <a href='/Notice.pdf' download='resume'>
-                  <button className='flex uppercase items-center gap-2 bg-transparent font-medium border-accent text-accent border hover:bg-accent hover:text-primary h-10 px-4 py-2 rounded-full'>
-                    <span>Download CV</span>
-                    <FiDownload className='text-xl' />
+                <a href='/minhaj_resume.pdf' download='resume'>
+                  <button className='relative cursor-pointer group flex uppercase items-center gap-2 bg-transparent font-medium border-accent text-accent border h-10 px-4 py-2 rounded-full transition-all duration-1000 overflow-hidden'>
+                    <span className='relative z-10 transition-all duration-700 delay-200 group-hover:text-primary'>
+                      Download CV
+                    </span>
+                    <FiDownload className='relative  z-10 text-xl transition-all duration-700 delay-200 group-hover:text-primary' />
+                    <span className='absolute inset-0 bg-accent w-0 left-0 transition-all duration-1000 ease-in-out group-hover:w-full '></span>
                   </button>
                 </a>
                 <div>{/* <Icons /> */}</div>
