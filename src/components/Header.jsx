@@ -46,7 +46,7 @@ export default function Header() {
                   className={`${
                     pathname === `/${item.href}` &&
                     'text-accent border-b-2 border-accent'
-                  } transition-all hover:text-accent font-medium text-white`}
+                  } transition-all hover:text-accent font-medium text-white cursor-pointer`}
                 >
                   {item.name}
                 </Link>
