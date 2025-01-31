@@ -1,6 +1,23 @@
+import { BsArrowDownRight } from 'react-icons/bs';
+import { Link } from 'react-scroll';
+const services = [
+  {
+    id: '01',
+    title: 'Web Development',
+    description:
+      'Skilled in building robust web applications using Express, Mongoose, Next.js, and JWT. I create efficient backends with secure APIs and smooth integrations.',
+  },
+
+  {
+    id: '02',
+    title: 'Frontend Design',
+    description:
+      'Experienced in building responsive, interactive UIs with React, Next.js, and Tailwind CSS for seamless user experiences across all devices.',
+  },
+];
 const About = () => {
   return (
-    <section id='about' className='py-20  '>
+    <section id='about' className='py-20 min-h-screen '>
       <div className='max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-col lg:flex-row items-center gap-12'>
         {/* Left Side - Text */}
         <div className='lg:w-1/2 text-center lg:text-left'>
@@ -27,7 +44,15 @@ const About = () => {
 
           {/* Button */}
           <div className='mt-6'>
-            <a href='/#projects'>
+            <Link
+              key={'projects'}
+              to={'projects'}
+              smooth={true}
+              duration={500}
+              spy={true}
+              hashSpy={true}
+              offset={-70}
+            >
               <button className='relative cursor-pointer group flex uppercase items-center gap-2 bg-transparent font-medium border-accent text-accent border h-10 px-4 py-2 rounded-full transition-all duration-1000 overflow-hidden'>
                 <span className='relative z-10 transition-all duration-700 delay-200 group-hover:text-primary'>
                   View Projects
@@ -35,17 +60,33 @@ const About = () => {
 
                 <span className='absolute inset-0 bg-accent w-0 left-0 transition-all duration-1000 ease-in-out group-hover:w-full '></span>
               </button>
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Right Side - Tech Image */}
         <div className='lg:w-1/2 flex justify-center'>
-          <img
-            src='/images/tech-bg.png'
-            alt='Technology and Coding'
-            className='w-full max-w-md rounded-lg shadow-lg'
-          />
+          <div className='grid md:grid-cols-2 grid-cols-1 gap-x-5 gap-y-10 mt-1'>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className='p-4 rounded-lg hover:-translate-y-1 transition-all relative overflow-hidden duration-500 group card shadow-sm bg-slate-50 dark:bg-[#1f2229]'
+              >
+                <div className='flex justify-between'>
+                  <h1 className='text-2xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500'>
+                    {service.id}
+                  </h1>
+                  <BsArrowDownRight className='dark:bg-white dark:text-black bg-primary h-10 w-10 p-2 rounded-full group-hover:bg-accent hover:-rotate-45 font-extrabold transition-all duration-500' />
+                </div>
+                <h1 className='md:text-2xl text-2xl font-extrabold group-hover:text-accent transition-all duration-500 text-black dark:text-white'>
+                  {service.title}
+                </h1>
+                <p className='leading-7 mt-3 text-black dark:text-white'>
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

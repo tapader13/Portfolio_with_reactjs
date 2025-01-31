@@ -2,6 +2,7 @@ import { Github, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { FiDownload } from 'react-icons/fi';
 import { Link } from 'react-router';
 import { Typewriter } from 'react-simple-typewriter';
+import Icons from './Icons';
 
 export default function Hero() {
   return (
@@ -50,7 +51,9 @@ export default function Hero() {
                     <span className='absolute inset-0 bg-accent w-0 left-0 transition-all duration-1000 ease-in-out group-hover:w-full '></span>
                   </button>
                 </a>
-                <div>{/* <Icons /> */}</div>
+                <div>
+                  <Icons />
+                </div>
               </div>
             </div>
             <div className=' md:ml-8 md:col-span-3 lg:col-span-4 mx-auto lg:mx-0   flex justify-end items-center'>

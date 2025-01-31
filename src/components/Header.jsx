@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-scroll';
-import { useLocation } from 'react-router';
 
 const navItems = [
-  { name: 'Home', href: '' },
+  { name: 'Home', href: 'home' },
   { name: 'About', href: 'about' },
   { name: 'Skills', href: 'skills' },
   { name: 'Education', href: 'education' },
@@ -15,8 +14,14 @@ const navItems = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = useLocation().pathname;
-  console.log(pathname);
+  const [activeSection, setActiveSection] = useState('home');
+
+  const handleSetActive = (section) => {
+    setActiveSection(section);
+  };
+  const handleSetInactive = () => {
+    setActiveSection('home');
+  };
   return (
     <nav className=' h-16 shadow-md fixed w-full z-10'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -27,6 +32,8 @@ export default function Header() {
               to='home'
               smooth={true}
               duration={500}
+              hashSpy={true}
+              spy={true}
             >
               <h1 className='font-semibold text-3xl  '>
                 Minhaj<span className='text-accent'>.</span>
@@ -42,11 +49,15 @@ export default function Header() {
                   smooth={true}
                   duration={500}
                   spy={true}
+                  hashSpy={true}
                   offset={-70}
-                  className={`${
-                    pathname === `/${item.href}` &&
-                    'text-accent border-b-2 border-accent'
-                  } transition-all hover:text-accent font-medium text-white cursor-pointer`}
+                  onSetActive={handleSetActive}
+                  onSetInactive={handleSetInactive}
+                  className={`transition-all hover:text-accent font-medium text-white cursor-pointer ${
+                    activeSection === item.href
+                      ? 'text-accent border-b-2 border-accent'
+                      : 'border-b-2 border-transparent'
+                  }`}
                 >
                   {item.name}
                 </Link>
