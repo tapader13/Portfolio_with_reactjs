@@ -1,26 +1,33 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router';
+import { Link } from 'react-scroll';
 
 const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Education', href: '#education' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: 'about' },
+  { name: 'Skills', href: 'skills' },
+  { name: 'Education', href: 'education' },
+  { name: 'Experience', href: 'experience' },
+  { name: 'Projects', href: 'projects' },
+  { name: 'Contact', href: 'contact' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='bg-white shadow-md fixed w-full z-10'>
+    <nav className='bg-white h-16 shadow-md fixed w-full z-10'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='flex items-center'>
-            <Link href='/' className='text-xl font-bold text-gray-800'>
-              Minhaj Tapader
+            <Link
+              className='cursor-pointer'
+              to='home'
+              smooth={true}
+              duration={500}
+            >
+              <h1 className='font-semibold text-3xl text-black '>
+                Minhaj<span className='text-accent'>.</span>
+              </h1>
             </Link>
           </div>
           <div className='hidden md:block'>
@@ -28,7 +35,11 @@ export default function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  offset={-70}
                   className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
                 >
                   {item.name}

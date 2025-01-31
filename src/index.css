@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+    --color-accent: #00ff99;
+    --color-accent-hover: #00e187;
+    --color-primary: #1c1c22;
+    --font-primary: "JetBrains Mono", serif;
+}
+
+@layer base {
+    body {
+        @apply font-primary dark:bg-primary bg-white text-white leading-loose;
+
+    }
+}
