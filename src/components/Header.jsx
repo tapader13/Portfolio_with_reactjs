@@ -51,6 +51,7 @@ export default function Header() {
                   spy={true}
                   hashSpy={true}
                   offset={-70}
+                  isDynamic={true}
                   onSetActive={handleSetActive}
                   onSetInactive={handleSetInactive}
                   className={`transition-all hover:text-accent font-medium text-white cursor-pointer ${

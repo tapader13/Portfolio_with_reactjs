@@ -17,7 +17,7 @@ const services = [
 ];
 const About = () => {
   return (
-    <section id='about' className='py-20 min-h-screen '>
+    <section id='about' className=' h-[80vh] flex items-center'>
       <div className='max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex flex-col lg:flex-row items-center gap-12'>
         {/* Left Side - Text */}
         <div className='lg:w-1/2 text-center lg:text-left'>
