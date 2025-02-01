@@ -46,102 +46,104 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id='skills' className='min-h-[80vh] my-20'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className=' mb-8'>
-          <h2 className='text-4xl font-bold mb-4'>
-            My <span className='text-accent'>Skills</span>
-          </h2>
-          <p className='text-gray-400'>
-            Hover over the circles to see my proficiency levels
-          </p>
-        </div>
+    <section id='skills' className='h-screen '>
+      <div className='flex items-center h-full w-full'>
+        <div className='max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className=' mb-8'>
+            <h2 className='text-4xl font-bold mb-4'>
+              My <span className='text-accent'>Skills</span>
+            </h2>
+            <p className='text-gray-400'>
+              Hover over the circles to see my proficiency levels
+            </p>
+          </div>
 
-        <div className='grid grid-cols-2 md:grid-cols-5 gap-8'>
-          {skillsData.map((skill) => (
-            <motion.div
-              key={skill.name}
-              className='flex flex-col group items-center'
-              whileHover={{ scale: 1.05 }}
-              onHoverStart={() => setHoveredSkill(skill.name)}
-              onHoverEnd={() => setHoveredSkill(null)}
-            >
-              <div className='relative w-20 h-20'>
-                <svg className='w-full h-full' viewBox='0 0 100 100'>
-                  <circle
-                    className='text-gray-700 stroke-current'
-                    strokeWidth='8'
-                    cx='50'
-                    cy='50'
-                    r='40'
-                    fill='transparent'
-                  />
-                  <motion.circle
-                    className='stroke-current'
-                    strokeWidth='8'
-                    strokeLinecap='round'
-                    cx='50'
-                    cy='50'
-                    r='40'
-                    fill='transparent'
-                    style={{ stroke: skill.color }}
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: skill.level / 100 }}
-                    transition={{ duration: 1, ease: 'easeInOut' }}
-                    viewport={{ once: false, amount: 0.5 }}
-                  />
-                </svg>
-                <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
-                  <span>
-                    {' '}
-                    <skill.icon className='text-3xl text-white group-hover:text-accent' />
-                  </span>
+          <div className='grid grid-cols-2 md:grid-cols-6 gap-8'>
+            {skillsData.map((skill) => (
+              <motion.div
+                key={skill.name}
+                className='flex flex-col group items-center'
+                whileHover={{ scale: 1.05 }}
+                onHoverStart={() => setHoveredSkill(skill.name)}
+                onHoverEnd={() => setHoveredSkill(null)}
+              >
+                <div className='relative w-20 h-20'>
+                  <svg className='w-full h-full' viewBox='0 0 100 100'>
+                    <circle
+                      className='text-gray-700 stroke-current'
+                      strokeWidth='8'
+                      cx='50'
+                      cy='50'
+                      r='40'
+                      fill='transparent'
+                    />
+                    <motion.circle
+                      className='stroke-current'
+                      strokeWidth='8'
+                      strokeLinecap='round'
+                      cx='50'
+                      cy='50'
+                      r='40'
+                      fill='transparent'
+                      style={{ stroke: skill.color }}
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: skill.level / 100 }}
+                      transition={{ duration: 1, ease: 'easeInOut' }}
+                      viewport={{ once: false, amount: 0.5 }}
+                    />
+                  </svg>
+                  <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
+                    <span>
+                      {' '}
+                      <skill.icon className='text-3xl text-white group-hover:text-accent' />
+                    </span>
+                  </div>
                 </div>
-              </div>
-              {hoveredSkill === skill.name ? (
-                <AnimatePresence>
-                  {hoveredSkill === skill.name && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className='text-accent font-bold'
-                    >
-                      {skill.level}%
-                    </motion.p>
-                  )}
-                </AnimatePresence>
-              ) : (
-                <p className='mt-4 font-medium text-lg'>{skill.name}</p>
-              )}
-            </motion.div>
-          ))}
-        </div>
+                {hoveredSkill === skill.name ? (
+                  <AnimatePresence>
+                    {hoveredSkill === skill.name && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className='text-accent font-bold'
+                      >
+                        {skill.level}%
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                ) : (
+                  <p className='mt-4 font-medium text-lg'>{skill.name}</p>
+                )}
+              </motion.div>
+            ))}
+          </div>
 
-        {/* Floating Shapes */}
-        <div className='absolute inset-0 overflow-hidden pointer-events-none'>
-          <motion.div
-            animate={{
-              rotate: 360,
-              transition: {
-                duration: 20,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: 'linear',
-              },
-            }}
-            className='absolute -top-20 -right-20 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl'
-          />
-          <motion.div
-            animate={{
-              rotate: -360,
-              transition: {
-                duration: 25,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: 'linear',
-              },
-            }}
-            className='absolute -bottom-20 -left-20 w-60 h-60 bg-indigo-500/5 rounded-full blur-3xl'
-          />
+          {/* Floating Shapes */}
+          <div className='absolute inset-0 overflow-hidden pointer-events-none'>
+            <motion.div
+              animate={{
+                rotate: 360,
+                transition: {
+                  duration: 20,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: 'linear',
+                },
+              }}
+              className='absolute -top-20 -right-20 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl'
+            />
+            <motion.div
+              animate={{
+                rotate: -360,
+                transition: {
+                  duration: 25,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: 'linear',
+                },
+              }}
+              className='absolute -bottom-20 -left-20 w-60 h-60 bg-indigo-500/5 rounded-full blur-3xl'
+            />
+          </div>
         </div>
       </div>
     </section>
