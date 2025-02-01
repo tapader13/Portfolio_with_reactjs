@@ -50,7 +50,7 @@ export default function Header() {
                   duration={500}
                   spy={true}
                   hashSpy={true}
-                  offset={-70}
+                  // offset={-70}
                   isDynamic={true}
                   onSetActive={handleSetActive}
                   onSetInactive={handleSetInactive}

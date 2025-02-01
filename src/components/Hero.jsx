@@ -6,8 +6,8 @@ import Icons from './Icons';
 
 export default function Hero() {
   return (
-    <section id='home' className=' pt-16 '>
-      <div className='max-w-7xl h-[80vh]  mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center  justify-between'>
+    <section id='home' className='h-screen pt-16 '>
+      <div className='max-w-7xl h-full  mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center  justify-between'>
         <main>
           {' '}
           {/* Added relative positioning and bottom padding */}

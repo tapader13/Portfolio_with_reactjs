@@ -46,7 +46,7 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id='skills' className='h-[80vh] mt-20'>
+    <section id='skills' className='min-h-[80vh] my-20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className=' mb-8'>
           <h2 className='text-4xl font-bold mb-4'>
