@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
-
+import toast from 'react-hot-toast';
 const Contact = () => {
   const Ref = useRef(null);
 
@@ -20,18 +20,25 @@ const Contact = () => {
         .then(
           (result) => {
             console.log('Email sent:', result.text);
+            toast.success("email sent")
           },
           (error) => {
             console.log('Email send error:', error);
+            toast.error("email not sent")
           }
         );
     }
   };
 
   return (
-    <div className='mx-auto w-screen '>
-      <div className='container h-full    '>
+    <div id='contact' className='h-screen    mt-20'>
+      <div className="flex items-center h-full w-full">
+      <div className='max-w-7xl w-full  mx-auto  px-4 sm:px-6 lg:px-8  '>
+        <h2 className='text-4xl font-bold  mb-6'>
+              Contact <span className='text-accent'>Me</span>
+            </h2>
         <div className='flex w-full md:flex-row-reverse md:justify-between items-center flex-col  gap-10'>
+          
           <div className='bg-contact-form w-full md:w-1/2 '>
             <h1 className='relative z-10 dark:text-white text-primary font-medium mb-3 text-3xl'>
               Send Message
@@ -67,7 +74,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <button className='relative z-10'>Send</button>
+                <button className='relative cursor-pointer text-black px-2 py-1 rounded-full bg-accent z-10'>Send</button>
               </div>
             </form>
           </div>
@@ -106,6 +113,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -42,3 +42,66 @@ body {
     width: 240%;
     top: -100%;
 }
+
+
+    .bg-contact-form {
+        position: relative;
+
+        background: repeating-conic-gradient(from 35.5deg, #00ff99 0%, #00ff99 10%, transparent 10%, transparent 50%);
+        padding: 5%;
+
+
+    }
+
+    .bg-contact-form::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: repeating-conic-gradient(from 110.5deg, #00ff99 0%, #00ff99 10%, transparent 10%, transparent 50%);
+    }
+
+    .bg-contact-form::after {
+        position: absolute;
+        content: "";
+        inset: 2px;
+        border: 20px solid;
+        border-color: white;
+        background: rgb(248, 250, 252);
+    }
+
+     .bg-contact-form::after {
+        border-color: #1c1c22;
+        background: #222;
+    }
+
+    .bg-contact-icon {
+        position: relative;
+        width: 50px;
+        background: repeating-conic-gradient(from 35.5deg, #00ff99 0%, #00ff99 10%, transparent 10%, transparent 50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+
+    }
+
+    .bg-contact-icon::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: repeating-conic-gradient(from 100.5deg, #00ff99 0%, #00ff99 10%, transparent 10%, transparent 50%);
+    }
+
+    .bg-contact-icon::after {
+        position: absolute;
+        content: "";
+        inset: 2px;
+        border: 5px solid;
+        border-color: white;
+        background: #00ff99;
+    }
+
+     .bg-contact-icon::after {
+        border-color: #1c1c22;
+    }
