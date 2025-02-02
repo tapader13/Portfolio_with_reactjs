@@ -1,4 +1,5 @@
 import About from './About';
+import Contact from './Contact';
 import Education from './Education';
 import Header from './Header';
 import Hero from './Hero';
@@ -14,6 +15,7 @@ const Home = () => {
       <Skills />
       <Education />
       <Projects />
+      <Contact />
     </div>
   );
 };
