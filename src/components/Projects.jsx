@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
 import { useState } from 'react';
-
+import { ProjectCard } from './ProjectCard';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 const projects = [
   {
     category: 'Frontend',
@@ -49,7 +49,7 @@ const projects = [
           'Tailwind CSS',
           'Swiper',
         ],
-        image: '/Screenshot 2024-08-07 090718.png',
+        image: '/humble.png',
         githubLink:
           'https://github.com/tapader13/humbleteam_clone?tab=readme-ov-file',
         liveLink: 'https://humbleteam-clone-nuwb.vercel.app/',
@@ -92,7 +92,7 @@ const projects = [
         details:
           'A modern travel agency website to book flights, hotels, and vacation packages.',
         technologies: ['HTML', 'CSS'],
-        image: '/Screenshot 2024-08-07 085630.png',
+        image: '/herotravel.png',
         githubLink: 'https://github.com/tapader13/hero-travel',
         liveLink: 'https://tapader13.github.io/hero-travel/',
       },
@@ -101,7 +101,7 @@ const projects = [
         details:
           'A responsive food ordering website with a dynamic menu and order management system.',
         technologies: ['HTML', 'CSS'],
-        image: '/Screenshot 2024-08-07 090033.png',
+        image: '/onlineorder.png',
         githubLink:
           'https://github.com/tapader13/responsive-html-css-two?tab=readme-ov-file',
         liveLink: 'https://responsive-html-css-two.vercel.app/',
@@ -215,8 +215,11 @@ const Projects = () => {
 
   return (
     <div id='projects' className='min-h-screen mt-20'>
-      <div className='max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center'>
-        <div>
+      <div className='max-w-7xl w-full h-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center'>
+        <div className='w-full'>
+          <h2 className='text-4xl mb-6 font-bold text-white'>
+            My <span className='text-accent'>Project</span>
+          </h2>
           <div className='flex flex-col gap-5'>
             <div className='flex justify-start md:gap-10 gap-4'>
               <h3
@@ -246,181 +249,52 @@ const Projects = () => {
                 Back-End
               </h3>
             </div>
-            <div className=''>
-              <div className='mt-2'>
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10'>
+            <div className=' w-full'>
+              <div className='mt-2  w-full'>
+                <ResponsiveMasonry
+                  columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+                  gutterBreakpoints={{ 350: '12px', 750: '16px', 900: '24px' }}
+                >
+                  <Masonry className=''>
+                    {tab === 'all' &&
+                      getFilteredProjects('all').map((project, index) => (
+                        <ProjectCard project={project} key={index} />
+                      ))}
+                  </Masonry>
+                </ResponsiveMasonry>
+                {/* <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10'>
                   {tab === 'all' &&
                     getFilteredProjects('all').map((project, index) => (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4, duration: 0.8 }}
-                        key={index}
-                        className=' bg-[#27272c] flex flex-col  p-5 rounded-lg shadow-lg'
-                      >
-                        <div className='relative w-full h-[200px] group'>
-                          <img
-                            src={project.image}
-                            alt={project.name}
-                            className='rounded-lg w-full h-full'
-                          />
-                          <div className='absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-300 p-1 text-white  bg-black/85'>
-                            <div
-                              style={{ height: '190px', overflowY: 'auto' }}
-                              className=''
-                            >
-                              <p className=''>{project.details}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <h3 className='text-xl text-accent font-bold mt-4'>
-                          {project.name}
-                        </h3>
-
-                        <div className='mt-4 flex-grow'>
-                          <div className='flex flex-wrap gap-3'>
-                            <span className='font-semibold text-black dark:text-white flex-shrink-0'>
-                              Technologies:
-                            </span>
-                            {project.technologies.map((tech, index) => (
-                              <button key={index}>{tech}</button>
-                            ))}
-                          </div>
-                        </div>
-                        <div className='mt-5 flex justify-start gap-4'>
-                          <a
-                            href={project.githubLink}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <button>GitHub</button>
-                          </a>
-                          <a
-                            href={project.liveLink}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <button>Live Demo</button>
-                          </a>
-                        </div>
-                      </motion.div>
+                      <ProjectCard project={project} key={index} />
                     ))}
-                </div>
+                </div> */}
+              </div>
+              <div className='mt-2 w-full'>
+                <ResponsiveMasonry
+                  columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+                  gutterBreakpoints={{ 350: '12px', 750: '16px', 900: '24px' }}
+                >
+                  <Masonry className=''>
+                    {tab === 'frontend' &&
+                      getFilteredProjects('frontend').map((project, index) => (
+                        <ProjectCard project={project} key={index} />
+                      ))}
+                  </Masonry>
+                </ResponsiveMasonry>
               </div>
               <div className='mt-2'>
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10'>
-                  {tab === 'frontend' &&
-                    getFilteredProjects('frontend').map((project, index) => (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4, duration: 0.8 }}
-                        key={index}
-                        className=' dark:bg-[#27272c] flex flex-col bg-slate-200 p-5 rounded-lg shadow-lg'
-                      >
-                        <div className='relative w-full h-[200px] group'>
-                          <img
-                            src={project.image}
-                            alt={project.name}
-                            className='rounded-lg'
-                          />
-                          <div className='absolute overflow-hidden opacity-0 group-hover:opacity-100 w-0 group-hover:w-full transition-all duration-300 pl-1 pt-1 h-0 group-hover:h-full text-black dark:text-white bg-slate-200 dark:bg-black/85'>
-                            <div style={{ height: '190px' }} className=''>
-                              <p className=''>{project.details}</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <h3 className='text-xl text-accent font-bold mt-4'>
-                          {project.name}
-                        </h3>
-
-                        <div className='mt-4 flex-grow'>
-                          <div className='flex flex-wrap gap-3'>
-                            <span className='font-semibold text-black dark:text-white flex-shrink-0'>
-                              Technologies:
-                            </span>
-                            {project.technologies.map((tech, index) => (
-                              <button key={index}>{tech}</button>
-                            ))}
-                          </div>
-                        </div>
-                        <div className='mt-5 flex justify-start gap-4'>
-                          <a
-                            href={project.githubLink}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <button>GitHub</button>
-                          </a>
-                          <a
-                            href={project.liveLink}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <button>Live Demo</button>
-                          </a>
-                        </div>
-                      </motion.div>
-                    ))}
-                </div>
-              </div>
-              <div className='mt-2'>
-                <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10'>
-                  {tab === 'backend' &&
-                    getFilteredProjects('backend').map((project, index) => (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4, duration: 0.8 }}
-                        key={index}
-                        className=' dark:bg-[#27272c] flex flex-col bg-slate-200 p-5 rounded-lg shadow-lg'
-                      >
-                        <div className='relative w-full h-[200px] group'>
-                          <img
-                            src={project.image}
-                            alt={project.name}
-                            className='rounded-lg'
-                          />
-                          <div className='absolute overflow-hidden opacity-0 group-hover:opacity-100 w-0 group-hover:w-full transition-all duration-300 pl-1 pt-1 h-0 group-hover:h-full text-black dark:text-white bg-slate-200 dark:bg-black/85'>
-                            <div style={{ height: '190px' }} className=''>
-                              <p className=''>{project.details}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <h3 className='text-xl text-accent font-bold mt-4'>
-                          {project.name}
-                        </h3>
-
-                        <div className='mt-4 flex-grow'>
-                          <div className='flex flex-wrap gap-3'>
-                            <span className='font-semibold text-black dark:text-white flex-shrink-0'>
-                              Technologies:
-                            </span>
-                            {project.technologies.map((tech, index) => (
-                              <button key={index}>{tech}</button>
-                            ))}
-                          </div>
-                        </div>
-                        <div className='mt-5 flex justify-start gap-4'>
-                          <a
-                            href={project.githubLink}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <button>GitHub</button>
-                          </a>
-                          <a
-                            href={project.liveLink}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <button>Live Demo</button>
-                          </a>
-                        </div>
-                      </motion.div>
-                    ))}
-                </div>
+                {' '}
+                <ResponsiveMasonry
+                  columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+                  gutterBreakpoints={{ 350: '12px', 750: '16px', 900: '24px' }}
+                >
+                  <Masonry className=''>
+                    {tab === 'backend' &&
+                      getFilteredProjects('backend').map((project, index) => (
+                        <ProjectCard project={project} key={index} />
+                      ))}
+                  </Masonry>
+                </ResponsiveMasonry>
               </div>
             </div>
           </div>

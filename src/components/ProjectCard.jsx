@@ -29,17 +29,26 @@ export const ProjectCard = ({ project }) => {
             Technologies:
           </span>
           {project.technologies.map((tech, index) => (
-            <button key={index}>{tech}</button>
+            <button
+              className='bg-primary  hover:bg-[#27272c]   text-white px-3 py-2  rounded-none  hover:text-accent'
+              key={index}
+            >
+              {tech}
+            </button>
           ))}
         </div>
       </div>
 
       <div className='mt-5 flex justify-start gap-4'>
         <a href={project.githubLink} target='_blank' rel='noopener noreferrer'>
-          <button>GitHub</button>
+          <button className='bg-[#27272c]  text-white  hover:bg-accent h-9 rounded-full px-3 border-accent border'>
+            GitHub
+          </button>
         </a>
         <a href={project.liveLink} target='_blank' rel='noopener noreferrer'>
-          <button>Live Demo</button>
+          <button className='bg-[#27272c]  h-9 rounded-full px-3 text-white  hover:bg-accent border-accent border'>
+            Live Demo
+          </button>
         </a>
       </div>
     </motion.div>
