@@ -22,7 +22,7 @@ const education = [
 
 export default function Education() {
   return (
-    <section id='education' className='h-screen '>
+    <section id='education' className='h-screen mt-20'>
       <div className='flex items-center h-full w-full'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div
