@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-scroll';
 
@@ -22,19 +22,23 @@ export default function Header() {
   const handleSetInactive = () => {
     setActiveSection('home');
   };
-  const [isScroll,setIsScroll]=useState(false)
+  const [isScroll, setIsScroll] = useState(false);
   useEffect(() => {
-    const handleScroll=()=>{
-      setIsScroll(window.scrollY>68)
-    }
-  window.addEventListener("scroll",handleScroll)
+    const handleScroll = () => {
+      setIsScroll(window.scrollY > 68);
+    };
+    window.addEventListener('scroll', handleScroll);
     return () => {
-     window.removeEventListener("scroll",handleScroll)
-    }
-  }, [])
-  console.log(isScroll)
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  console.log(isScroll);
   return (
-    <nav className={`h-16 shadow-md transition-all duration-300 fixed w-full z-10 ${isScroll?"backdrop-blur-md bg-black/50 shadow-md":"bg-transparent"}`}>
+    <nav
+      className={`h-16 shadow-md transition-all duration-300 fixed w-full z-10 ${
+        isScroll ? 'backdrop-blur-md bg-black/50 shadow-md' : 'bg-transparent'
+      }`}
+    >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           <div className='flex items-center'>
@@ -92,13 +96,13 @@ export default function Header() {
         </div>
       </div>
       {isOpen && (
-        <div className='md:hidden'>
+        <div className='md:hidden bg-black'>
           <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
-                className='text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium'
+                to={item.href}
+                className=' hover:text-accent block px-3 py-2 rounded-md text-base font-medium'
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
