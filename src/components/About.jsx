@@ -43,7 +43,7 @@ const About = () => {
           </p>
 
           {/* Button */}
-          <div className='mt-6'>
+          <div className='mt-6  flex justify-center lg:justify-start'>
             <Link
               key={'projects'}
               to={'projects'}
