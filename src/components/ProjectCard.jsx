@@ -25,7 +25,7 @@ export const ProjectCard = ({ project }) => {
 
       <div className='mt-4 flex-grow'>
         <div className='flex flex-wrap gap-3'>
-          <span className='font-semibold text-black dark:text-white flex-shrink-0'>
+          <span className='font-semibold text-white flex-shrink-0'>
             Technologies:
           </span>
           {project.technologies.map((tech, index) => (

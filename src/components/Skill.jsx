@@ -46,7 +46,7 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id='skills' className='min-h-screen '>
+    <section id='skills' className='min-h-screen mt-10 md:mt-0 '>
       <div className='flex items-center h-full w-full'>
         <div className='max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8'>
           <div className=' mb-8'>

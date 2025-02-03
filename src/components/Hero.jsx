@@ -6,7 +6,7 @@ import Icons from './Icons';
 
 export default function Hero() {
   return (
-    <section id='home' className='min-h-screen pt-16 '>
+    <section id='home' className='min-h-screen sm:h-screen pt-16 '>
       <div className='max-w-7xl h-full  mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center  justify-between'>
         <main>
           {' '}
