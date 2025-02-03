@@ -13,17 +13,17 @@ export default function Hero() {
           {/* Added relative positioning and bottom padding */}
           <div className='grid md:grid-cols-6 lg:grid-cols-8 grid-cols-1 gap-9'>
             <div className='lg:col-span-4 md:col-span-3'>
-              <span className='text-xl text-black dark:text-white'>
+              <span className='text-xl text-white'>
                 Software Developer
               </span>
-              <h1 className='lg:text-4xl xl:text-5xl text-3xl mb-6 leading-[1.1] font-semibold text-black dark:text-white'>
+              <h1 className='lg:text-4xl xl:text-5xl text-3xl mb-6 leading-[1.1] font-semibold text-white'>
                 Hello I&apos;m <br />{' '}
                 <span className='text-accent tracking-tighter inline-block min-w-[330px]'>
                   <Typewriter
                     words={[
                       'Minhaj Tapader',
-                      'Next Developer',
-                      'React Developer',
+                      'NextJs Developer',
+                      'ReactJs Developer',
                     ]}
                     loop={0}
                     // cursor
@@ -34,7 +34,7 @@ export default function Hero() {
                   />
                 </span>
               </h1>
-              <p className='mb-9 dark:text-white/75 text-black/75 '>
+              <p className='mb-9 text-white/75  '>
                 {' '}
                 I am a passionate software developer with a knack for creating
                 efficient and scalable web applications. With a strong

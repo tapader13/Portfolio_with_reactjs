@@ -40,13 +40,13 @@ const Contact = () => {
         <div className='flex w-full md:flex-row-reverse md:justify-between items-center flex-col  gap-10'>
           
           <div className='bg-contact-form w-full md:w-1/2 '>
-            <h1 className='relative z-10 dark:text-white text-primary font-medium mb-3 text-3xl'>
+            <h1 className='relative z-10 text-white  font-medium mb-3 text-3xl'>
               Send Message
             </h1>
             <form ref={Ref} onSubmit={sendEmail}>
               <div className='relative mb-5 z-10'>
                 <input
-                  className='w-full focus:outline-none border-b-[1px] border-accent text-primary dark:text-white bg-transparent px-3 py-1'
+                  className='w-full focus:outline-none border-b-[1px] border-accent  text-white bg-transparent px-3 py-1'
                   type='text'
                   placeholder='Full Name'
                   id='name'
@@ -56,7 +56,7 @@ const Contact = () => {
               </div>
               <div className='relative mb-5 z-10'>
                 <input
-                  className='w-full focus:outline-none border-b-[1px] border-accent text-primary dark:text-white bg-transparent px-3 py-1'
+                  className='w-full focus:outline-none border-b-[1px] border-accent text-white bg-transparent px-3 py-1'
                   type='email'
                   placeholder='Email'
                   id='email'
@@ -66,7 +66,7 @@ const Contact = () => {
               </div>
               <div className='relative mb-5 z-10'>
                 <textarea
-                  className='w-full focus:outline-none border-b-[1px] border-accent text-primary dark:text-white bg-transparent px-3 py-1'
+                  className='w-full focus:outline-none border-b-[1px] border-accent text-white bg-transparent px-3 py-1'
                   placeholder='Type your Message.....'
                   id='message'
                   name='message'
@@ -86,7 +86,7 @@ const Contact = () => {
               </div>
               <div>
                 <h1 className='text-accent text-xl font-medium'>Address</h1>
-                <p className='dark:text-white text-black'>
+                <p className='text-white'>
                   Zakigonj, Sylhet, Dhaka, Bangladesh
                 </p>
               </div>
@@ -97,7 +97,7 @@ const Contact = () => {
               </div>
               <div>
                 <h1 className='text-accent text-xl font-medium'>Phone</h1>
-                <p className='dark:text-white text-black'>+8801786224382</p>
+                <p className='text-white '>+8801786224382</p>
               </div>
             </div>
             <div className='flex gap-3 mt-10 items-start'>
@@ -106,7 +106,7 @@ const Contact = () => {
               </div>
               <div>
                 <h1 className='text-accent text-xl font-medium'>Email</h1>
-                <p className='dark:text-white text-black'>
+                <p className='text-white'>
                   minhajtapader0@gmail.com
                 </p>
               </div>

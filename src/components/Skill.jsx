@@ -46,7 +46,7 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id='skills' className='h-screen '>
+    <section id='skills' className='min-h-screen '>
       <div className='flex items-center h-full w-full'>
         <div className='max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8'>
           <div className=' mb-8'>
@@ -58,7 +58,7 @@ export default function Skills() {
             </p>
           </div>
 
-          <div className='grid grid-cols-2 md:grid-cols-6 gap-8'>
+          <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8'>
             {skillsData.map((skill) => (
               <motion.div
                 key={skill.name}

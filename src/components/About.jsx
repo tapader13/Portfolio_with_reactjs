@@ -70,18 +70,18 @@ const About = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className='p-4 rounded-lg hover:-translate-y-1 transition-all relative overflow-hidden duration-500 group card shadow-sm bg-slate-50 dark:bg-[#1f2229]'
+                className='p-4 rounded-lg hover:-translate-y-1 transition-all relative overflow-hidden duration-500 group card shadow-sm bg-[#1f2229]'
               >
                 <div className='flex justify-between'>
                   <h1 className='text-2xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500'>
                     {service.id}
                   </h1>
-                  <BsArrowDownRight className='dark:bg-white dark:text-black bg-primary h-10 w-10 p-2 rounded-full group-hover:bg-accent hover:-rotate-45 font-extrabold transition-all duration-500' />
+                  <BsArrowDownRight className='bg-white text-black  h-10 w-10 p-2 rounded-full group-hover:bg-accent hover:-rotate-45 font-extrabold transition-all duration-500' />
                 </div>
-                <h1 className='md:text-2xl text-2xl font-extrabold group-hover:text-accent transition-all duration-500 text-black dark:text-white'>
+                <h1 className='md:text-2xl text-2xl font-extrabold group-hover:text-accent transition-all duration-500 text-white'>
                   {service.title}
                 </h1>
-                <p className='leading-7 mt-3 text-black dark:text-white'>
+                <p className='leading-7 mt-3 text-white'>
                   {service.description}
                 </p>
               </div>
