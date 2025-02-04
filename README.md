@@ -73,7 +73,7 @@ Welcome to my **personal portfolio**! This project is built using modern web tec
 
 ### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/tapader13/portfolio.git
+git clone https://github.com/tapader13/Portfolio_React.git
 cd portfolio
 ```
 
