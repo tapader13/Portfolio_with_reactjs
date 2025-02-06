@@ -49,12 +49,12 @@ export const ProjectCard = ({ project }) => {
 
         <a href={project.liveLink} target='_blank' rel='noopener noreferrer'>
           <button className='bg-[#27272c]  h-9 rounded-full px-3 text-white  hover:bg-accent border-accent border'>
-            Live Demo
+            Live
           </button>
         </a>
         <Link to={`/details/${project.name}`}>
           <button className='bg-[#27272c]  h-9 rounded-full px-3 text-white  hover:bg-accent border-accent border'>
-            View More
+            Details
           </button>
         </Link>
       </div>
