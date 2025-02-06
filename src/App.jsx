@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import Home from './components/Home';
 import { Toaster } from 'react-hot-toast';
 import DetailsPage from './pages/DetailsPage';
+import NotFound from './components/NotFound';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: 'details/:name',
     element: <DetailsPage />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 function App() {
