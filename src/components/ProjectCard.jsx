@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router';
 
 export const ProjectCard = ({ project }) => {
   return (
@@ -45,11 +46,21 @@ export const ProjectCard = ({ project }) => {
             GitHub
           </button>
         </a>
+
         <a href={project.liveLink} target='_blank' rel='noopener noreferrer'>
           <button className='bg-[#27272c]  h-9 rounded-full px-3 text-white  hover:bg-accent border-accent border'>
             Live Demo
           </button>
         </a>
+        <Link
+          to={`details/${project.name}`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <button className='bg-[#27272c]  h-9 rounded-full px-3 text-white  hover:bg-accent border-accent border'>
+            View More
+          </button>
+        </Link>
       </div>
     </motion.div>
   );
