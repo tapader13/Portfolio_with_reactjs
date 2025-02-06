@@ -52,11 +52,7 @@ export const ProjectCard = ({ project }) => {
             Live Demo
           </button>
         </a>
-        <Link
-          to={`details/${project.name}`}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
+        <Link to={`/details/${project.name}`}>
           <button className='bg-[#27272c]  h-9 rounded-full px-3 text-white  hover:bg-accent border-accent border'>
             View More
           </button>

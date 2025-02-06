@@ -2,26 +2,24 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import './App.css';
 import HomePage from './pages/HomePage';
 import Home from './components/Home';
- import  { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import DetailsPage from './pages/DetailsPage';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: 'products', element: <div>Products</div> },
-    ],
+    children: [{ path: '/', element: <Home /> }],
   },
   {
-    path: 'about',
-    element: <div>About</div>,
+    path: 'details/:name',
+    element: <DetailsPage />,
   },
 ]);
 function App() {
   return (
     <div>
       <RouterProvider router={router} />
-      <Toaster/>
+      <Toaster />
     </div>
   );
 }

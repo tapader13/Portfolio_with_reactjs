@@ -6,15 +6,6 @@ const projects = [
     category: 'Frontend',
     items: [
       {
-        name: '3D Car Website',
-        details:
-          'A 3D interactive car showcase built with Next.js, Tailwind CSS, and Three.js.',
-        technologies: ['NextJs', 'Tailwind CSS', 'Typescript', 'Three Js'],
-        image: '/Screenshot 2024-08-07 085117.png',
-        githubLink: 'https://github.com/tapader13/car-company-3d',
-        liveLink: 'https://car-company-3d.vercel.app/',
-      },
-      {
         name: 'Youtube Clone',
         details:
           'A fully-featured YouTube clone offering video search, playback, category filtering. Users can explore channels, view playlists, watch videos, and navigate related content, shorts and playlists.',
@@ -78,15 +69,7 @@ const projects = [
         githubLink: 'https://github.com/tapader13/modern-websites',
         liveLink: 'https://gh-snowy.vercel.app/',
       },
-      {
-        name: 'Influencer Gears',
-        details:
-          'A sleek online store for influencers to showcase and sell their merchandise.',
-        technologies: ['HTML', 'CSS'],
-        image: '/Screenshot 2024-08-07 085341.png',
-        githubLink: 'https://github.com/tapader13/Influencer-gears',
-        liveLink: 'https://tapader13.github.io/Influencer-gears/',
-      },
+
       {
         name: 'Hero Travel',
         details:
@@ -95,25 +78,6 @@ const projects = [
         image: '/herotravel.png',
         githubLink: 'https://github.com/tapader13/hero-travel',
         liveLink: 'https://tapader13.github.io/hero-travel/',
-      },
-      {
-        name: 'Online Food Order',
-        details:
-          'A responsive food ordering website with a dynamic menu and order management system.',
-        technologies: ['HTML', 'CSS'],
-        image: '/onlineorder.png',
-        githubLink:
-          'https://github.com/tapader13/responsive-html-css-two?tab=readme-ov-file',
-        liveLink: 'https://responsive-html-css-two.vercel.app/',
-      },
-      {
-        name: 'Restaurant Landing Page',
-        details:
-          'A beautiful and modern landing page for a restaurant to attract customers.',
-        technologies: ['HTML', 'CSS'],
-        image: '/Screenshot 2024-08-07 090248.png',
-        githubLink: 'https://github.com/tapader13/responsive-html-css-one',
-        liveLink: 'https://responsive-html-css-one.vercel.app/',
       },
     ],
   },
@@ -187,15 +151,6 @@ const projects = [
         image: '/Screenshot 2024-09-26 100258.png',
         githubLink: 'https://github.com/tapader13/ecom_frontend',
         liveLink: 'https://ecom-frontend-flax.vercel.app/',
-      },
-      {
-        name: 'E-commerce Website',
-        details:
-          'A full-featured e-commerce website with a RESTful API for managing products, orders, and users.',
-        technologies: ['React', 'Firebase', 'CSS'],
-        image: '/Screenshot 2024-08-07 092131.png',
-        githubLink: 'https://github.com/tapader13/react-firebase-shop',
-        liveLink: 'https://linkdin-clone-b8887.web.app/',
       },
     ],
   },
