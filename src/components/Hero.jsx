@@ -40,7 +40,10 @@ export default function Hero() {
                 amazing together!
               </p>
               <div className='flex lg:flex-row flex-col lg:gap-8 gap-4 lg:items-center'>
-                <a href='/minhaj_resume.pdf' download='resume'>
+                <a
+                  href='/resume of minhaj uddin.pdf'
+                  download='resume of minhaj uddin'
+                >
                   <button className='relative cursor-pointer group flex uppercase items-center lg:gap-x-2 gap-x-1 bg-transparent font-medium border-accent text-accent border h-10 lg:px-4 px-3 py-2 rounded-full transition-all duration-1000 overflow-hidden'>
                     <span className='relative z-10 transition-all duration-700 delay-200 group-hover:text-primary'>
                       Download CV
